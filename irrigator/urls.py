@@ -10,9 +10,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("fields", include("plants.urls")),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    # ----------------------------
+    path("fields", include("plants.urls")),
+    path("schedules", include("plants.urls")),
 ]
 
 admin.site.site_header = "Irrigator Admin"
