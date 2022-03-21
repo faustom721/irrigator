@@ -7,3 +7,4 @@ class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
         fields = ("field", "weekdays", "hours_start", "durations")
+        read_only_fields = ("field",)

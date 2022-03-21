@@ -4,6 +4,6 @@ from rest_framework.routers import DefaultRouter
 from .views import *
 
 router = DefaultRouter()
-router.register("", ScheduleViewSet)
+router.register("schedules", ScheduleViewSet)
 
 urlpatterns = [path("/", include(router.urls))]
