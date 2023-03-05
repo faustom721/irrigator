@@ -1,13 +1,11 @@
 from calendar import weekday
-from turtle import update
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from plants.models import Field
 
-from .models import Schedule
-from .serializers import ScheduleSerializer
+from .models import Schedule, Field
+from .serializers import ScheduleSerializer, FieldSerializer
 
 
 class ScheduleViewSet(viewsets.ModelViewSet):
@@ -23,3 +21,8 @@ class ScheduleViewSet(viewsets.ModelViewSet):
             return Response(serialized_data)
         else:
             return super().list(request, *args, **kwargs)
+
+
+class FieldViewSet(viewsets.ModelViewSet):
+    queryset = Field.objects.all()
+    serializer_class = FieldSerializer
