@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import Schedule
-from .models import Field
+from .models import FieldPlantation
 
 
 class ScheduleSerializer(serializers.ModelSerializer):
@@ -11,7 +11,7 @@ class ScheduleSerializer(serializers.ModelSerializer):
         read_only_fields = ("field",)
 
 
-class FieldSerializer(serializers.ModelSerializer):
+class FieldPlantationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Field
+        model = FieldPlantation
         fields = "__all__"

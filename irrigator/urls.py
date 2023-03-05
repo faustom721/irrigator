@@ -13,8 +13,8 @@ urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     # ----------------------------
-    path("fields", include("plants.urls")),
-    path("irrigation", include("irrigation.urls")),
+    path("irrigation/", include("irrigation.urls")),
+    path("users/", include("users.urls")),
 ]
 
 admin.site.site_header = "Irrigator Admin"
