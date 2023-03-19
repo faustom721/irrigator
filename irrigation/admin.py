@@ -16,3 +16,15 @@ class ScheduleAdmin(admin.ModelAdmin):
 
     def estate(self, obj):
         return obj.field.estate
+
+
+@admin.register(FieldPlantation)
+class FieldPlantationAdmin(admin.ModelAdmin):
+    list_display = ("name", "water_supply", "is_planted")
+    search_fields = ["field__estate__name", "name", "identification"]
+
+
+@admin.register(WaterSupply)
+class WaterSupplyAdmin(admin.ModelAdmin):
+    list_display = ("name", "estate", "supply_type")
+    search_fields = ["name", "estate__name", "supply_type"]

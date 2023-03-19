@@ -33,6 +33,12 @@ class WaterSupply(models.Model):
         max_length=10, choices=[("tank", "tank"), ("network", "network")]
     )
 
+    class Meta:
+        verbose_name_plural = "Water supplies"
+
+    def __str__(self):
+        return self.name
+
 
 class FieldPlantation(models.Model):
     """
