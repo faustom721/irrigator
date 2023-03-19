@@ -1,8 +1,8 @@
 # Irrigator's backend project
-In form of a Django Rest Framework API, basically
+In form of a Django Rest Framework API, basically.
 
 ## A vague sketch of entities of the idea this is built on
-::: mermaid
+``` mermaid
   classDiagram
     
     User "1" -- "*" Estate
@@ -32,4 +32,4 @@ In form of a Django Rest Framework API, basically
     class Schedule {
       props...
     }
-:::
+```
