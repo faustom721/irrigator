@@ -40,10 +40,10 @@ class WaterSupply(models.Model):
         return self.name
 
 
-class FieldPlantation(models.Model):
+class PlantationField(models.Model):
     """
     The field of a plantation. For example a field of tomatoes. This represents fisically the plantation,
-    if the user has more than one tomatoes plantations fisically separated, it should create more FieldPlantations
+    if the user has more than one tomatoes plantations fisically separated, it should create more PlantationFields
     """
 
     name = models.CharField(max_length=150)
@@ -76,15 +76,15 @@ class FieldPlantation(models.Model):
 
 
 class Schedule(models.Model):
-    """When a FieldPlantation gets watered"""
+    """When a PlantationField gets watered"""
 
     name = models.CharField(max_length=150, null=True, blank=True)
     is_active = models.BooleanField(
         default=False
-    )  # A FieldPlantation can have multiple Schedules, but only one can be active at a time.
+    )  # A PlantationField can have multiple Schedules, but only one can be active at a time.
     # The rest would be just for archive and reuse purposes. # This is constrainted below.
     field_plantation = models.ForeignKey(
-        FieldPlantation, on_delete=models.CASCADE, related_name="schedules"
+        PlantationField, on_delete=models.CASCADE, related_name="schedules"
     )
 
     # These three fields are used to define the field's irrigation schedule

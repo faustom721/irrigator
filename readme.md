@@ -7,8 +7,8 @@ In form of a Django Rest Framework API, basically.
     
     User "1" -- "*" Estate
     Estate "1" -- "*" WaterSupply
-    WaterSupply "1" -- "*" FieldPlantation
-    FieldPlantation "1" -- "*" Schedule
+    WaterSupply "1" -- "*" PlantationField
+    PlantationField "1" -- "*" Schedule
 
     class User {
       props...
@@ -24,7 +24,7 @@ In form of a Django Rest Framework API, basically.
       props...
     }
 
-    class FieldPlantation {
+    class PlantationField {
       props...
     }
 

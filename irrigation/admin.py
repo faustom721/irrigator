@@ -18,8 +18,8 @@ class ScheduleAdmin(admin.ModelAdmin):
         return obj.field.estate
 
 
-@admin.register(FieldPlantation)
-class FieldPlantationAdmin(admin.ModelAdmin):
+@admin.register(PlantationField)
+class PlantationFieldAdmin(admin.ModelAdmin):
     list_display = ("name", "water_supply", "is_planted")
     search_fields = ["field__estate__name", "name", "identification"]
 
