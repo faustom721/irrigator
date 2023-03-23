@@ -4,9 +4,9 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=irrigator
+      - POSTGRES_USER=irrigator
+      - POSTGRES_PASSWORD=irrigator12345
   backend:
     build: .
     volumes:
@@ -14,8 +14,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=irrigator
+      - POSTGRES_USER=irrigator
+      - POSTGRES_PASSWORD=irrigator12345
     depends_on:
       - db
